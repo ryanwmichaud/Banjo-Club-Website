@@ -1,28 +1,91 @@
+:root{
+	--secondary-color rgb(173, 152, 31);
+}
+
 body{
-	color: darkred;
-
-}
-
-h1{
-	padding: 0;
 	margin: 0;
-	display: inline-block;
+	color: darkred;
+	background-color: lightgray;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.navbar{
+	background-color: darkred;
+	color: rgb(173, 152, 31);
+	
+	
+}
+.navbar .container{
+	display: flex;
+	place-content: space-between; 
 
 }
-nav{
-	display: inline-block;
-	float: right;
+
+.navbar .logo{
+	padding: .5em .5em;
+	text-decoration: none;
+	color: var(--secondary-color);
+	font-size: 2em;
+	font-weight: bold;
 }
-nav ul{
-	padding: 0;
+.navbar img:hover{
+	cursor: pointer;
 }
+
+nav {
+	display: none;
+	background-color: #222;
+	position: fixed;
+	height: 100vh;
+	z-index: 999;
+    width: 66%;
+	right: 0;
+}
+
 nav ul li {
-	display: inline-block;
-	color: lightgrey;
-	background: #222;
-	padding: 5px;
-	border-radius: 3px;
+	list-style-type: none;
+	padding-top: 3em;
 }
 nav ul li a{
-	color: lightgrey;
+	color: var(--secondary-color);
+	text-decoration: none;
+	text-transform: capitalize;
+}
+nav ul li a:hover{
+	font-weight: bold;
+}
+
+.open-menu{
+	width: 3em;
+}
+.close-menu{
+	width: 2em;
+}
+.mobile-menu-btn{
+	display:block;
+}
+@media only screen and (min-width: 792px) {
+	.open-menu, .close-menu{
+		display: none;
+	}
+	nav{
+		display: inline-block;
+		background: none;
+		position: unset;
+		height: auto ;
+	}
+	nav ul{
+		display: flex;
+		margin-top: 1.8em;
+	}
+	nav ul li {
+		display: inline-block;
+		padding: 0em 1em;
+	}
+	.navbar .container{
+		display: grid;
+        grid-template-columns: 500px auto;
+	}
+
+	
+	
 }
